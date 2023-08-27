@@ -1,0 +1,34 @@
+<%- include("partials/header");-%>
+<h1>Compose</h1>
+<form method="post" action="/compose">
+<div class="form-group">   
+    <label for="title">Title</label>
+    <input class="form-control" id="title" type="text" name="postTitle">
+</div>
+<div class="form-group">
+    <label for="post">Question Body</label>
+    <textarea class="form-control" id="post" name="postBody" rows="4" cols="50"></textarea>
+</div>
+
+
+<div class="form-group">
+    <label for="choices">Multiple Choice Questions</label>
+    <% for(let i=0; i<choicesNumber; i++){ %>
+        <input class="form-control" id="choices" type="text" name="questionChoices">
+    <% } %>
+</div>
+
+<button class="btn btn-primary" type="submit" name="button" value="publish">publish</button>
+</form>
+
+<div class-"form-group">
+    <form method="post" action="/compose">
+        <label for="quantity">Quantity:</label>
+        <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="5">
+        <button class="btn" type="submit" name="button1">submit</button>
+    </form>
+    
+</div>
+
+
+<%- include("partials/footer"); -%> 

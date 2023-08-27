@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+
+<h1>Contact</h1>
+<form method="post" action="/contact" >
+    <div class="form-group">
+        <h3>Mobile Number</h3>
+        <p style="display:inline">+</p><input name="code" type="number" min="00" max="100" value="91"><input name="phoneNumber" type="number" min="0000000000" max="9999999999">
+    </div>
+    
+    <div class="form-group">
+        <h3>Email</h3>
+        <input type="text" name="email">
+    
+    </div>
+
+    <div class="form-group">
+        <label for="contactDescription">More</label>
+        <textarea class="form-control" id="contactDescription" type="text" name="description" rows="5" col="30"></textarea>
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+<br>
+<br>
+<p><span  style="font-weight:bold">Phone Number: </span> <%= updatedNumber %></p><br>
+
+<p><span style="font-weight:bold">Email: </span>
+    <%= updatedEmail %>
+</p>
+<p><%= contact %></p>
+<%- include("partials/footer"); -%>

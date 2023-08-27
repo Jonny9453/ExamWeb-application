@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+<h1>About</h1>
+<div class="form-group">
+   <form action="/about" method="post">
+      <label for="aboutYoo"></label>
+      <textarea class="form-control" id="aboutYoo" name="aboutYou" id="" cols="30" rows="10"></textarea>
+      <button class="btn btn-outline-dark " type="submit">Add</button>
+   </form>
+</div>
+
+
+<p>
+   <%= about %> 
+</p>
+
+<%- include("partials/footer") -%>

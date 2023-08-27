@@ -1,0 +1,37 @@
+<%- include('partials/header'); -%>
+<section class="home">
+<h1 id="t">Home </h1>
+<p><%= startingContent %></p>
+<div class="questionAndUpdateSection">
+    <% Posts.forEach( function(post,index){ %>
+        
+        <div class="questionSection">
+            <h1>
+                <%= post.title %>
+            </h1>
+            <p>
+                <%= post.content.substring(0,100)+ "..."; %><a  href="/posts/<%=post.title%>" onclick="myFunction()">Read More</a>
+            </p>
+            <ol>
+                <% for(let i=0; i<post.multipleChoiceQuestions.length; i++){ %>
+                    <li><%= post.multipleChoiceQuestions[i] %></li>
+                <% } %>
+                
+            </ol>
+        </div>
+        
+        <div class="update">
+            <form action="/post" method="post">
+            <button id="myInput" type="submit" class="btn btn-primary" name="questionIndex" value="swag">Update</button>
+            </form>
+        </div>
+        
+       
+    <% }) %>
+          
+</div>
+</section>
+
+
+
+<%- include('partials/footer'); -%>

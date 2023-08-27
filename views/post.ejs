@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+<h1><%= title %></h1>
+<p><%= content %></p>
+<ol>
+    <% for(let i=0; i<multipleChoiceQuestions.length; i++){ %>
+        <li><%= multipleChoiceQuestions[i] %></li>
+    <% } %>
+</ol>
+<br>
+<div class="update">
+    <form action="/post" method="post">
+    <button type="submit" class="btn btn-primary" name="updateButton" value="<%= title %>">Update</button>
+    </form>
+</div>
+<br>
+<br>
+<% if(updatePost==="updatePost"){ %>
+    <textarea class="form-control" id="post" name="" rows="4" cols="50"></textarea>
+<% } %>
+
+
+<%- include("partials/footer") -%>
